@@ -1,10 +1,16 @@
 <?php
 
-  $inputJSON = file_get_contents('php://input');
-  $input = json_decode($inputJSON, TRUE);
+  if ( $_GET['username'] && $_GET['password'] ){
+     $username= $_GET['username'];
+     $password= $_GET['password'];
 
-  $username = $input['username'];
-  $password = $input['password'];
+  }else{
+
+     $inputJSON = file_get_contents('php://input');
+     $input = json_decode($inputJSON, TRUE);
+     $username = $input['username'];
+     $password = $input['password'];
+ }
 
   $result = elgg_authenticate($username, $password);
 

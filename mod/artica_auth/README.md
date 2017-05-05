@@ -41,3 +41,10 @@ This action make a login into Elgg system.
   "password":"123asd-asdas15-asda14-123as1",
 }
 ```
+
+### GET action/artica/login
+This action make a login into Elgg system.
+
+http://elglocation/action/artica/login?username=asdasd&&password=023iads91283kjasd9
+
+
