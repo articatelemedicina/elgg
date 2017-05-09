@@ -55,20 +55,23 @@ function hello_world_init() {
 	{
 	$userID = $user->getOwnerGUID ();
 	$username = $user->getDisplayName();
+	$pass = $user->getPass();
 	}
-	
+	elgg_dump($userID);
+	elgg_dump($username);
+	elgg_dump($pass);
 	
 	if ((_elgg_services()->request->getUrlSegments()[0]==='action')&(_elgg_services()->request->getUrlSegments()[1]==='login'))
 	{
-		sendLogToDit('login','START','login','LIST',$userID,'SCS');
-/* 		$handle1 = fopen('LogURL.txt',"a");
+		sendLogToDit('login','START','login','LIST',$pass,'SCS');
+ 		$handle1 = fopen('LogURL.txt',"a");
 		fwrite($handle1,_elgg_services()->request->getUrlSegments()[0]."/"._elgg_services()->request->getUrlSegments()[1]);
-		fclose($handle1); */
+		fclose($handle1);
 		return;
 	 }
 	if ((_elgg_services()->request->getUrlSegments()[0]==='action')&(_elgg_services()->request->getUrlSegments()[1]==='logout'))
 	{
-		sendLogToDit('logout', 'START', 'logout', 'LIST',$userID , 'SCS');
+		sendLogToDit('logout', 'START', 'logout', 'LIST',$pass , 'SCS');
 		$handle2 = fopen('LogURL.txt',"a");
 		fwrite($handle2,_elgg_services()->request->getUrlSegments()[0]."/"._elgg_services()->request->getUrlSegments()[1]."\n");
 		fclose($handle2);
@@ -100,7 +103,7 @@ function hello_world_init() {
 			{
 				if(in_array($from,$avail))
 				{
-					$logg = "sendLogToDit($from, 'STOP', $from, 'DETAIL', $userID, 'SCS')\n";
+					$logg = "sendLogToDit($from, 'STOP', $from, 'DETAIL', $pass, 'SCS')\n";
 					$handle = fopen('keepLog.txt',"a");
 					fwrite($handle,$logg);
 					fclose($handle);
@@ -110,7 +113,7 @@ function hello_world_init() {
 					_elgg_services()->session->set('lastSTOP',$from);
 					_elgg_services()->session->set($from,false);
 					elgg_dump($logg);//echo 
-					sendLogToDit($from, 'STOP', $from, 'DETAIL', $userID, 'SCS');}				
+					sendLogToDit($from, 'STOP', $from, 'DETAIL', $pass, 'SCS');}				
 				}
 				else
 				{
@@ -119,7 +122,7 @@ function hello_world_init() {
 				
 				if(in_array($to,$avail))
 				{
-					$logg = "sendLogToDit($to, 'START', $to, 'DETAIL', $userID, 'SCS')\n";
+					$logg = "sendLogToDit($to, 'START', $to, 'DETAIL', $pass, 'SCS')\n";
 					$handle = fopen('keepLog.txt',"a");
 					fwrite($handle,$logg);
 					fclose($handle);
@@ -134,7 +137,7 @@ function hello_world_init() {
 					_elgg_services()->session->set('lastSTART',$to);
 					_elgg_services()->session->set($to,true);
 					elgg_dump($logg); //echo 
-					sendLogToDit($to, 'START', $to, 'DETAIL', $userID, 'SCS');}				
+					sendLogToDit($to, 'START', $to, 'DETAIL', $pass, 'SCS');}				
 				}
 				else
 				{
@@ -182,6 +185,7 @@ function hello_world_init() {
 	elgg_dump(_elgg_services()->session->get(lastSTART));	
 	elgg_dump(_elgg_services()->session->get(prev_from));	
 	elgg_dump(_elgg_services()->session->get(prev_to));	 */
-		
+
+
 }
 ?>
