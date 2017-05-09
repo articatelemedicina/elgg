@@ -26,7 +26,7 @@ This action allow to register a new user account.
 ```
 {
   "username":"test",
-  "password":"123asd-asdas15-asda14-123as1",
+  "password":"123asd",
   "email":"test@test.com",
   "name":"test"
 }
@@ -41,3 +41,10 @@ This action make a login into Elgg system.
   "password":"123asd-asdas15-asda14-123as1",
 }
 ```
+
+### GET action/artica/login
+This action make a login into Elgg system.
+
+http://elglocation/action/artica/login?username=asdasd&&password=023iads91283kjasd9
+
+

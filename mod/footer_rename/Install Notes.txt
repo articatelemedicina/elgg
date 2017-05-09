@@ -1,0 +1,5 @@
+1. Unzip folder  and put in 'mod' directory.
+
+2. Place your desired text in "views\default\page\elements\footer.php and \views\default\admin\footer.php".
+
+3. Activate plugin & Enjoy.
