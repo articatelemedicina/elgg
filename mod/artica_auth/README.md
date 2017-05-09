@@ -26,7 +26,7 @@ This action allow to register a new user account.
 ```
 {
   "username":"test",
-  "password":"123asd-asdas15-asda14-123as1",
+  "password":"123asd",
   "email":"test@test.com",
   "name":"test"
 }

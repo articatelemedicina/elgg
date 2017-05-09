@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin_manifest xmlns="http://www.elgg.org/plugin_manifest/1.8">
+	<name>Themer</name>
+	<id>themer</id>
+	<author>Core developers</author>
+	<version>1.11</version>
+	<category>themes</category>
+	<description>Themer for Elgg.</description>
+	<website></website>
+	<copyright></copyright>
+	<license>GPL V3</license>
+	<requires>
+		<type>elgg_release</type>
+		<version>1.11</version>
+	</requires>
+	<requires>
+		<type>plugin</type>
+		<name>aalborg_theme</name>
+	</requires>
+	<screenshot>
+		<description>Settings</description>
+		<path>previews/1.jpg</path>
+	</screenshot>	
+	<activate_on_install>true</activate_on_install>
+</plugin_manifest>
