@@ -6,6 +6,7 @@
  * @subpackage User.Authentication
  */
 
+ 
 $session = elgg_get_session();
 
 // set forward url
@@ -43,6 +44,8 @@ if ($result !== true) {
 }
 
 $user = get_user_by_username($username);
+
+
 if (!$user) {
 	register_error(elgg_echo('login:baduser'));
 	forward(REFERER);
