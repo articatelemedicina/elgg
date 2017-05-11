@@ -74,7 +74,7 @@ function hello_world_init() {
 		
 	$from1= $ddd2['referer'][0];
 	$from2= explode('/',$from1);
-	$from= $from2[5];
+	$from= $from2[3];
 	$to= _elgg_services()->request->getUrlSegments()[0];
 	
 /* 	elgg_dump($from);
